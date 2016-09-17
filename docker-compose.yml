@@ -7,4 +7,6 @@ models:
      # -  ./static:/usr/src/app/static #??
     ports:
       - "8001:8000"
-    command: bash -c "mod_wsgi-express start-server --reload-on-changes wiz/wsgi.py"
+    command: bash -c "mod_wsgi-express start-server --reload-on-changes wiz/wsgi.py --url-alias ./mysite/static /static/admin" 
+
+

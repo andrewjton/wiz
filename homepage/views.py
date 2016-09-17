@@ -12,12 +12,20 @@ def index(request):
     return HttpResponse("Hello Andrew. Congrats, you're making progress! :)")
 
 def getUser(request, user_id):
-    data = serializers.serialize("json", [User.objects.get(pk=user_id)]) #creates a json object in data
+#    if request.method == 'POST'
+        
+#    else if request.method == 'GET'
+        data = serializers.serialize("json", [User.objects.get(pk=user_id)]) #creates a json object in data
+        return HttpResponse(data)
+
+def getAllUsers(request):
+    data = serializers.serialize("json", User.objects.all()) #creates a json object in data
     return HttpResponse(data)
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+def getJob(request):
+    data = serializers.serialize("json", [Job.objects.get(pk=job_id)]) #creates a json object in data
+    return HttpResponse(data)
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def getAllJobs(request):
+    data = serializers.serialize("json", Job.objects.all()) #creates a json object in data
+    return HttpResponse(data)

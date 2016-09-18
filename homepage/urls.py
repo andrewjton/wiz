@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^api/user/n/$', views.createUser, name='createUser'),
     url(r'^api/user/all/$', views.getAllUsers, name='getAllUsers'),
     url(r'^api/job/(?P<job_id>[0-9]+)/$', views.getJob, name='getJob'),
-    url(r'^(?P<user_id>[0-9]+)/results/$', views.results, name='results'),
+    url(r'^api/job/n/$', views.createJob, name='createJob'),
+    url(r'^api/job/all/$', view.getAllJobs, name='getAllJobs'),
+
 
 ]

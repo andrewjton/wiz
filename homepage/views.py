@@ -56,10 +56,3 @@ def createJob(request):
 def getAllJobs(request):
     data = serializers.serialize("json", Job.objects.all())
     return HttpResponse(data)
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)

@@ -56,3 +56,4 @@ def createJob(request):
 def getAllJobs(request):
     data = serializers.serialize("json", Job.objects.all())
     return HttpResponse(data)
+
